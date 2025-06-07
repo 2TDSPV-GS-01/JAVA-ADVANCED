@@ -1,6 +1,7 @@
 package com.fonteviva.apirest.entity;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 
 import java.util.ArrayList;
@@ -18,7 +19,7 @@ public class EstacaoTratamento {
 
     @Column(name = "DT_INSTALACAO", nullable = false)
     @Temporal(TemporalType.DATE)
-    @NotBlank
+    @NotNull
     private Date dataInstalacao;
 
     @Column(name = "ST_ESTACAO", nullable = false, length = 1)
