@@ -36,6 +36,7 @@ public class Endereco {
     @Pattern(regexp = "\\d{8}", message = "CEP deve conter 8 dígitos numéricos")
     @Size(min = 8, max = 8)
     @NotBlank
+    @Column(name = "DS_CEP", nullable = false, length = 100)
     private String cep;
 
 
