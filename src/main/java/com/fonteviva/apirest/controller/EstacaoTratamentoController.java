@@ -1,6 +1,11 @@
 package com.fonteviva.apirest.controller;
 import com.fonteviva.apirest.dto.EstacaoTratamentoDTO;
 import com.fonteviva.apirest.service.interfaces.EstacaoTratamentoService;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,6 +17,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/estacoes")
+@SecurityRequirement(name = "bearerAuth")
 public class EstacaoTratamentoController {
 
     @Autowired
@@ -34,6 +40,11 @@ public class EstacaoTratamentoController {
         return estacaoService.buscarPorId(id)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
+    }
+    @GetMapping("/paginado")
+    public ResponseEntity<Page<EstacaoTratamentoDTO>> listarComPaginacao(
+            @PageableDefault(size = 10, sort = "dataInstalacao", direction = Sort.Direction.DESC) Pageable pageable) {
+        return ResponseEntity.ok(estacaoService.listar(pageable));
     }
 
     @PutMapping("/{id}")

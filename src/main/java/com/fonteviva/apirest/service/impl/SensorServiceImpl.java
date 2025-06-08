@@ -3,6 +3,7 @@ package com.fonteviva.apirest.service.impl;
 import com.fonteviva.apirest.dto.SensorDTO;
 import com.fonteviva.apirest.entity.EstacaoTratamento;
 import com.fonteviva.apirest.entity.Sensor;
+import com.fonteviva.apirest.exception.ResourceNotFoundException;
 import com.fonteviva.apirest.mappers.SensorMapper;
 import com.fonteviva.apirest.repository.EstacaoTratamentoRepository;
 import com.fonteviva.apirest.repository.SensorRepository;
@@ -26,7 +27,7 @@ public class SensorServiceImpl implements SensorService {
     @Override
     public SensorDTO salvar(SensorDTO dto) {
         EstacaoTratamento estacao = estacaoRepository.findById(dto.getIdEstacaoTratamento())
-                .orElseThrow(() -> new RuntimeException("Estação de tratamento não encontrada"));
+                .orElseThrow(() -> new ResourceNotFoundException("Estação de tratamento não encontrada"));
 
         Sensor sensor = SensorMapper.toEntity(dto, estacao);
         return SensorMapper.toDTO(sensorRepository.save(sensor));
@@ -56,13 +57,16 @@ public class SensorServiceImpl implements SensorService {
 
     @Override
     public void deletar(Long id) {
+        if (!sensorRepository.existsById(id)) { // Verifique se o sensor existe
+            throw new ResourceNotFoundException("Sensor com ID " + id + " não encontrado.");
+        }
         sensorRepository.deleteById(id);
     }
 
     @Override
     public SensorDTO atualizar(Long id, SensorDTO dto) {
         Sensor sensor = sensorRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Sensor não encontrado"));
+                .orElseThrow(() -> new ResourceNotFoundException("Sensor não encontrado"));
 
         sensor.setTipo(dto.getTipo());
         sensor.setTipoMedida(dto.getTipoMedida());
@@ -70,7 +74,7 @@ public class SensorServiceImpl implements SensorService {
         // Atualiza a estação, se o ID mudar
         if (!sensor.getEstacaoTratamento().getId().equals(dto.getIdEstacaoTratamento())) {
             EstacaoTratamento estacao = estacaoRepository.findById(dto.getIdEstacaoTratamento())
-                    .orElseThrow(() -> new RuntimeException("Estação de Tratamento não encontrada"));
+                    .orElseThrow(() -> new ResourceNotFoundException("Estação de Tratamento não encontrada"));
             sensor.setEstacaoTratamento(estacao);
         }
 

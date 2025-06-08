@@ -1,8 +1,13 @@
 package com.fonteviva.apirest.dto;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
+
 import java.util.List;
 
 public class ResponsavelDTO {
+    @Pattern(regexp = "\\d{11}", message = "CPF deve conter 11 dígitos numéricos")
     private String cpf;
+    @NotBlank(message = "Nome é obrigatório")
     private String nome;
     private List<Long> idsEstacoes;
 

@@ -1,12 +1,22 @@
 package com.fonteviva.apirest.dto;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
+
 import java.util.Date;
 import java.util.List;
 
 public class EstacaoTratamentoDTO {
     private Long id;
+    @NotNull(message = "Data é obrigatória")
     private Date dataInstalacao;
+    @NotBlank(message = "Status é obrigatório")
     private String status;
+    @Pattern(regexp = "\\d{11}", message = "CPF deve conter 11 dígitos numéricos")
+    @NotNull(message = "CPF do responsável é obrigatório")
     private String cpfResponsavel;
+    @Valid
     private List<SensorDTO> sensores;
 
     public EstacaoTratamentoDTO() {}

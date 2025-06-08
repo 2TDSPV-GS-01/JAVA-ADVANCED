@@ -1,6 +1,7 @@
 package com.fonteviva.apirest.service.impl;
 
 import com.fonteviva.apirest.entity.Endereco;
+import com.fonteviva.apirest.exception.ResourceNotFoundException;
 import com.fonteviva.apirest.repository.EnderecoRepository;
 import com.fonteviva.apirest.service.interfaces.EnderecoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +24,7 @@ public class EnderecoServiceImpl implements EnderecoService {
     @Override
     public Endereco buscarPorId(Long id) {
         Optional<Endereco> enderecoOpt = enderecoRepository.findById(id);
-        return enderecoOpt.orElseThrow(() -> new RuntimeException("Endereço não encontrado: " + id));
+        return enderecoOpt.orElseThrow(() -> new ResourceNotFoundException("Endereço não encontrado: " + id));
     }
 
     @Override
@@ -34,7 +35,7 @@ public class EnderecoServiceImpl implements EnderecoService {
     @Override
     public Endereco atualizar(Endereco endereco) {
         if (!enderecoRepository.existsById(endereco.getId())) {
-            throw new RuntimeException("Endereço não encontrado para atualizar: " + endereco.getId());
+            throw new ResourceNotFoundException("Endereço não encontrado para atualizar: " + endereco.getId());
         }
         return enderecoRepository.save(endereco);
     }
@@ -42,7 +43,7 @@ public class EnderecoServiceImpl implements EnderecoService {
     @Override
     public void deletarPorId(Long id) {
         if (!enderecoRepository.existsById(id)) {
-            throw new RuntimeException("Endereço não encontrado para deletar: " + id);
+            throw new ResourceNotFoundException("Endereço não encontrado para deletar: " + id);
         }
         enderecoRepository.deleteById(id);
     }

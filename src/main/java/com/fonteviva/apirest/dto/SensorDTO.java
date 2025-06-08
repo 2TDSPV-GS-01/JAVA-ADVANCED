@@ -1,9 +1,15 @@
 package com.fonteviva.apirest.dto;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+
 public class SensorDTO {
     private Long id;
+    @NotBlank(message = "Tipo é obrigatório")
     private String tipo;
+    @NotBlank(message = "Tipo de medida é obrigatório")
     private String tipoMedida;
+    @NotNull(message = "ID da Estação de Tratamento é obrigatório")
     private Long idEstacaoTratamento;
 
     public SensorDTO() {}

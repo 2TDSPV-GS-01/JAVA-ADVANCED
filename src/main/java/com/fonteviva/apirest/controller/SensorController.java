@@ -1,6 +1,9 @@
 package com.fonteviva.apirest.controller;
 import com.fonteviva.apirest.dto.SensorDTO;
 import com.fonteviva.apirest.service.interfaces.SensorService;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -9,6 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/sensores")
+@SecurityRequirement(name = "bearerAuth")
 public class SensorController {
 
     @Autowired
@@ -40,6 +44,10 @@ public class SensorController {
     }
 
     @DeleteMapping("/{id}")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "204", description = "Sensor deletado com sucesso"),
+            @ApiResponse(responseCode = "404", description = "Sensor não encontrado")
+    })
     public ResponseEntity<Void> deletar(@PathVariable Long id) {
         sensorService.deletar(id);
         return ResponseEntity.noContent().build();

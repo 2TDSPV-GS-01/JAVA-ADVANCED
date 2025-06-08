@@ -30,7 +30,7 @@ public class EstacaoTratamento {
     @JoinColumn(name = "DS_CPF")
     private Responsavel responsavel;
 
-    @OneToMany(mappedBy = "estacaoTratamento", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "estacaoTratamento", cascade = CascadeType.ALL)
     private List<Sensor> sensores = new ArrayList<>();
 
     public EstacaoTratamento(Long id, Date dataInstalacao, String status, Responsavel responsavel) {

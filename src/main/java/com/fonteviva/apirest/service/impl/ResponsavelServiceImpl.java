@@ -2,6 +2,7 @@ package com.fonteviva.apirest.service.impl;
 
 import com.fonteviva.apirest.dto.ResponsavelDTO;
 import com.fonteviva.apirest.entity.Responsavel;
+import com.fonteviva.apirest.exception.ResourceNotFoundException;
 import com.fonteviva.apirest.mappers.ResponsavelMapper;
 import com.fonteviva.apirest.repository.ResponsavelRepository;
 import com.fonteviva.apirest.service.interfaces.ResponsavelService;
@@ -48,7 +49,7 @@ public class ResponsavelServiceImpl implements ResponsavelService {
     @Override
     public ResponsavelDTO atualizar(String cpf, ResponsavelDTO dto) {
         Responsavel responsavel = responsavelRepository.findById(cpf)
-                .orElseThrow(() -> new RuntimeException("Responsável não encontrado"));
+                .orElseThrow(() -> new ResourceNotFoundException("Responsável não encontrado"));
 
         responsavel.setNome(dto.getNome());
 

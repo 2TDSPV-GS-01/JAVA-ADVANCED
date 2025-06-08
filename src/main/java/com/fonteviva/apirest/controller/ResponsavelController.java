@@ -1,6 +1,7 @@
 package com.fonteviva.apirest.controller;
 import com.fonteviva.apirest.dto.ResponsavelDTO;
 import com.fonteviva.apirest.service.interfaces.ResponsavelService;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -10,6 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/responsaveis")
+@SecurityRequirement(name = "bearerAuth")
 public class ResponsavelController {
 
     @Autowired

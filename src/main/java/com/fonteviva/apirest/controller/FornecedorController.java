@@ -6,6 +6,7 @@ import com.fonteviva.apirest.entity.Fornecedor;
 import com.fonteviva.apirest.mappers.FornecedorMapper;
 import com.fonteviva.apirest.service.interfaces.EnderecoService;
 import com.fonteviva.apirest.service.interfaces.FornecedorService;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -16,6 +17,7 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/fornecedores")
+@SecurityRequirement(name = "bearerAuth")
 public class FornecedorController {
 
     @Autowired
