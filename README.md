@@ -74,12 +74,11 @@ O projeto segue uma arquitetura em camadas, comum em aplicações Spring Boot:
 
 ### 5.1. Repositório de Código Fonte
 
-* **GitHub:** [https://docs.github.com/articles/referencing-and-citing-content](https://github.com/2TDSPV-GS-01/JAVA-ADVANCED.git)
-    * _Certifique-se de que o repositório está público ou que o avaliador tem acesso._
+* **GitHub:** https://github.com/2TDSPV-GS-01/JAVA-ADVANCED.git
 
 ### 5.2. Deploy em Nuvem
 
-* **URL do Swagger UI:** `[https://seu-app-no-render.onrender.com/swagger-ui/index.html](https://java-advanced.onrender.com/swagger-ui/index.html#)`
+* **URL do Swagger UI:** `https://java-advanced.onrender.com/swagger-ui/index.html#`
     * _Esta é a interface interativa para explorar e testar a API diretamente no navegador._
 
 ---
