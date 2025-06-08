@@ -1,14 +1,12 @@
-# Usa imagem base oficial do OpenJDK 17 slim
-FROM openjdk:17-jdk-slim
-
-# Diretório de trabalho dentro do container
+# Etapa de build
+FROM maven:3.9.4-eclipse-temurin-17 AS build
 WORKDIR /app
+COPY . .
+RUN mvn clean install -DskipTests
 
-# Copia o JAR gerado pelo Maven para dentro do container
-COPY target/*.jar app.jar
-
-# Expõe a porta padrão do Spring Boot
+# Etapa de runtime
+FROM openjdk:17-jdk-slim
+WORKDIR /app
+COPY --from=build /app/target/*.jar app.jar
 EXPOSE 8080
-
-# Comando para rodar a aplicação
 ENTRYPOINT ["java", "-jar", "app.jar"]
