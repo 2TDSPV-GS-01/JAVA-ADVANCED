@@ -122,7 +122,7 @@ A API está deployada na nuvem e pode ser testada utilizando ferramentas como **
 
 ## 7. Vídeos de Demonstração
 
-* **Vídeo Demonstração da Solução Completa (Máx. 10 minutos):** [[Vídeo de demonstração](https://youtu.be/fUW_IH_rGJ0?si=TnDiQrOGWY6MvJIt)]
-* **Vídeo Pitch (Máx. 3 minutos):** [Link para o seu vídeo pitch]
+* **Vídeo Demonstração da Solução Completa:** [[Vídeo de demonstração](https://youtu.be/fUW_IH_rGJ0?si=TnDiQrOGWY6MvJIt)]
+* **Vídeo Pitch:** [Link para o seu vídeo pitch]
 
 ---
