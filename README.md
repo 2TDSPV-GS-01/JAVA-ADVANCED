@@ -120,6 +120,15 @@ A API está deployada na nuvem e pode ser testada utilizando ferramentas como **
         }
         ```
 
+## **Integrantes**
+
+- Nome: Francesco Di Benedetto
+  RM: RM557313
+- Nome: Nathalia Gomes da Silva
+  RM: RM554945
+- Nome: Gustavo Goulart Bretas
+  RM: RM555708
+
 ## 7. Vídeos de Demonstração
 
 * **Vídeo Demonstração da Solução Completa:** [[Vídeo de demonstração](https://youtu.be/fUW_IH_rGJ0?si=TnDiQrOGWY6MvJIt)]
