@@ -133,7 +133,13 @@ A API está deployada na nuvem e pode ser testada utilizando ferramentas como **
 
 ### 7.1. Autenticação do usuário
 
+<img width="655" alt="1  autenticacao_usuario" src="https://github.com/user-attachments/assets/c3a0d960-a9dc-44b5-a030-4423e641fed6" />
+
+<img width="613" alt="2  response_autenticacao_usuario" src="https://github.com/user-attachments/assets/ac55ca83-52bb-433b-a5fd-54d00623299b" />
+
 ### 7.2 POST
+
+
 
 ### 7.3 GET
 
