@@ -139,13 +139,20 @@ A API está deployada na nuvem e pode ser testada utilizando ferramentas como **
 
 ### 7.2 POST
 
-
+<img width="642" alt="6  post_response" src="https://github.com/user-attachments/assets/43a8cf39-7f36-4570-a7ba-ae22c008f0cf" />
+<img width="669" alt="5  post_request" src="https://github.com/user-attachments/assets/03ad1335-812e-423e-8992-fc1d8c5df8e2" />
 
 ### 7.3 GET
+<img width="630" alt="8  get_response" src="https://github.com/user-attachments/assets/31d08ad8-6427-4721-af4f-9bfc0b16b08d" />
+<img width="658" alt="7  get_request" src="https://github.com/user-attachments/assets/2c636c29-8b4c-4299-ab7e-e3ada299f20a" />
 
 ### 7.4 PUT
+<img width="622" alt="10  put_response" src="https://github.com/user-attachments/assets/087568b7-c11f-49ba-88ff-16ef29a38aae" />
+<img width="657" alt="9  put_request" src="https://github.com/user-attachments/assets/ddfa27c1-c169-4534-b5d7-8e3f0108a758" />
 
 ### 7.5 DELETE
+<img width="632" alt="12  delete_response" src="https://github.com/user-attachments/assets/36699d63-6393-42db-890a-1086fc6e48b7" />
+<img width="656" alt="11  delete_request" src="https://github.com/user-attachments/assets/b5d5d7a4-35d0-47fd-a86c-b6d152f26b75" />
 
 
 ## 8. Vídeos de Demonstração
