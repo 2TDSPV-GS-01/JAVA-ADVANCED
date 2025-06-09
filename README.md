@@ -129,7 +129,20 @@ A API está deployada na nuvem e pode ser testada utilizando ferramentas como **
 - Nome: Gustavo Goulart Bretas
   RM: RM555708
 
-## 7. Vídeos de Demonstração
+## 7. CRUD
+
+### 7.1. Autenticação do usuário
+
+### 7.2 POST
+
+### 7.3 GET
+
+### 7.4 PUT
+
+### 7.5 DELETE
+
+
+## 8. Vídeos de Demonstração
 
 * **Vídeo Demonstração da Solução Completa:** [[Vídeo de demonstração](https://youtu.be/fUW_IH_rGJ0?si=TnDiQrOGWY6MvJIt)]
 * **Vídeo Pitch:** [[Vídeo pitch]](https://www.youtube.com/watch?v=pGPg7w3ZHkE)
